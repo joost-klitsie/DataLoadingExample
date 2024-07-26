@@ -1,5 +1,8 @@
 package com.klitsie.dataloading
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 sealed interface LoadingResult<out T> {
 	val isLoading: Boolean
 

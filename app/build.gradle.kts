@@ -35,6 +35,7 @@ android {
 		targetCompatibility = JavaVersion.VERSION_21
 	}
 	kotlinOptions {
+		freeCompilerArgs += "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi"
 		jvmTarget = "21"
 	}
 	buildFeatures {

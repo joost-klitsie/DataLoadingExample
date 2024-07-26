@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.stateIn
 import kotlin.Result.Companion.failure
@@ -190,11 +189,7 @@ private class DefaultDataLoader<T> : DataLoader<T> {
 			}
 		}
 			.flatMapLatest { currentResult ->
-				loadAndObserveData(
-					currentResult,
-					observeData,
-					fetchData
-				)
+				loadAndObserveData(currentResult, observeData, fetchData)
 			}
 			.distinctUntilChanged()
 			.onEach {
